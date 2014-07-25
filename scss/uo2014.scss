@@ -1,0 +1,123 @@
+@import "s2/s2";
+
+// Tango colours
+$yellow1: #fce94f;
+$yellow2: #edd400;
+$yellow3: #c4a000;
+$orange1: #fcaf3e;
+$orange2: #f57900;
+$orange3: #ce5c00;
+$brown1:  #e9b96e;
+$brown2:  #c17d11;
+$brown3:  #8f5902;
+$green1:  #8ae234;
+$green2:  #73d216;
+$green3:  #4d9a06;
+$blue1:   #729fcf;
+$blue2:   #3465a4;
+$blue3:   #204a87;
+$purple1: #ad7fa8;
+$purple2: #75507b;
+$purple3: #5c3566;
+$red1:    #ef2929;
+$red2:    #cc0000;
+$red3:    #a40000;
+
+$white: #f8f8f8;
+
+html {
+    @include background-image(radial-gradient(circle at 50% 83%, $purple2, #f8f8f8 80%));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    font: 16px "Open Sans";
+    margin: 0px;
+}
+
+h2 {
+    font: 32px Raleway;
+    margin-bottom: 7px;
+}
+
+h3 {
+    font: 24px Raleway;
+    margin-bottom: 7px;
+}
+
+p {
+    margin: 7px 0px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.ig-main-header {
+    @include clearfix;
+    
+    $side-color: rgba(0, 0, 0, 0.04);
+    $center-color: rgba(77, 154, 6, 0.12);
+    @include background-image(linear-gradient(left, $side-color, $center-color, $side-color));
+    border-bottom: 2px solid $green3;
+    height: 78px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+
+    .title {
+        color: #444;
+        font: 300 48px/48px "Open Sans";
+        letter-spacing: -2px;
+    }
+    .igem {
+        color: $green3;
+        font-weight: 800;
+        letter-spacing: -3px;
+    }
+    .igem-logo {
+        float: right;
+    }
+}
+
+.ig-tile {
+    cursor: pointer;
+    font-size: 0px;
+    position: relative;
+
+    &.empty:after {
+        content: '';
+        display: block;
+        padding-top: 62.5%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .text {
+        @include background-image(linear-gradient(transparent, rgba(0, 0, 0, 0.75) 80%));
+
+        bottom: 0px;
+        padding: 7px;
+        padding-top: 18px;
+        position: absolute;
+        width: 100%;
+
+        h2, h3, p {
+            color: $white;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.ig-wide {
+    @include s2-col(1, 1.6)
+}
+.ig-narrow {
+    @include s2-col(0.6, 1.6)
+}

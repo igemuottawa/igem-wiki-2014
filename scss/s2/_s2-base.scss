@@ -1,0 +1,24 @@
+// Classes and functions for responsive web.
+@import "global/s2-respond";
+
+// ===========================
+// ====== Global Styles ======
+// ===========================
+
+* {
+	@include box-sizing(border-box);
+}
+
+.left {
+    float: left;
+}
+.right {
+    float:right;
+}
+
+// Allows class names to be namespaced with a custom prefix.
+
+//@function s2($selector) {
+//	$ns: "s2-"; // Change the default namespace here.
+//	@return ".#{$ns}#{$selector}"
+//};

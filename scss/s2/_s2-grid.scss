@@ -1,0 +1,238 @@
+// =====================
+// ====== S2 Grid ======
+// =====================
+
+// ====== Feature switches ======
+
+// If true, enable centred columns. You can still center columns using pushes.
+$s2-grid-enable-center: true !default;
+
+// If true, generates CSS rules for pulled columns. WARNING: Pulled columns take
+// up a LOT of bytes.
+$s2-grid-enable-pull: true !default;
+
+// If true, generates CSS rules for pushed columns. Pushed columns don't take up
+// a lot of bytes, but aren't always necessary...
+$s2-grid-enable-push: true !default;
+
+// ====== Variables ======
+
+// Number of grid sizes to generate. Grids of size n will fit n columns in a
+// row. You can mix and match sizes in a single grid, although that generally
+// isn't a good idea. Add more columns using lists: (7, 12, 16...).
+$s2-grid-cols: (8, 12) !default;
+
+// Space between columns. Units must match the row width (% or px).
+$s2-grid-gutter: 1% !default;
+
+// Bottom margin of a grid row. Creates vertical flow.
+$s2-grid-row-island: 7px !default;
+
+// Maximum width of a grid row (% or px).
+$s2-grid-row-max: 1148px !default;
+
+// Minimum width of a grid row (% or px).
+$s2-grid-row-min: 0px !default;
+
+// Horizontal row padding.
+$s2-grid-row-padding: 15px !default;
+
+// Standard width of a grid row (% or px). Set to 100% for a fluid grid.
+$s2-grid-row-width: 100% !default;
+
+// Number of tile grid sizes to generate. Each tile grid of size n will fit n
+// tiles horizontally.
+$s2-grid-tiles: (3) !default;
+
+// Whether to float tiles left or right. The last tile row will align left or
+// right based on this value. At this point it's not easily possible to center-align tiles without using inline-block hacks, which is flaky across browsers and breaks the spirit of Spartan.
+$s2-grid-tile-float: left !default;
+
+
+// Computes the % width of a column
+@function s2-colwidth($size, $grid-width) {
+	@return (((100% + $s2-grid-gutter) / $grid-width) * $size) - $s2-grid-gutter - 0.001%;
+}
+
+// Computes the % width of a tile
+@function s2-tilewidth($tilecount) {
+	@return (100% + $s2-grid-gutter) / $tilecount - $s2-grid-gutter - 0.001%;
+}
+
+// Centres an element
+@mixin s2-center() {
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+
+	// TODO: What does this do?
+	&:first-child {
+		margin-left: auto;
+	}
+}
+
+// Variable-width column
+@mixin s2-col($colspan, $colcount) {
+	float: left;
+	margin-left: $s2-grid-gutter;
+	width: s2-colwidth($colspan, $colcount);
+
+	&:first-child {
+		margin-left: 0px;
+	}
+}
+
+@mixin s2-inner-row {
+	margin-left: 0;
+	margin-right: 0;
+	max-width: 100%;
+	min-width: 0px;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+}
+
+@mixin s2-pull($amount, $grid-width, $col-size) {
+	$self-width: -1 * s2-colwidth($col-size, $grid-width);
+	$pull-amount: -1 * s2-colwidth($amount, $grid-width);
+	$gutter: -1 * $s2-grid-gutter;
+
+	margin-left: $self-width + $pull-amount + $gutter;
+}
+
+@mixin s2-push($amount, $grid-width) {
+	@if $amount < $grid-width - 1 {
+		margin-left: s2-colwidth($amount, $grid-width) + 2 * $s2-grid-gutter;
+	}
+	&:first-child {
+		margin-left: s2-colwidth($amount, $grid-width) + $s2-grid-gutter;
+	}
+}
+
+@mixin s2-responsive-column($width) {
+	@include respond("max-width: #{$width}") {
+		float: none;
+		margin-left: 0px;
+		width: 100%;
+	}
+}
+
+@mixin s2-row {
+	@include s2-center;
+	@include clearfix;
+
+	margin-bottom: $s2-grid-row-island;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $s2-grid-row-max;
+	min-width: $s2-grid-row-min;
+	padding: 0 $s2-grid-row-padding;
+	width: $s2-grid-row-width;
+}
+
+@mixin s2-tile($tilecount) {
+	float: $s2-grid-tile-float;
+	margin-bottom: $s2-grid-gutter;
+	margin-left: $s2-grid-gutter;
+	width: s2-tilewidth($tilecount);
+
+	// Every $tilecount children
+	&:nth-child(#{$tilecount}n + 1) {
+		margin-left: 0px;
+	}
+}
+
+// ===============================
+// ====== Class definitions ======
+// ===============================
+
+// Defines the grid row. All top-level rows will be styled the sames, but nested
+// rows will shrink to fit whichever column they are in.
+.row {
+	@include s2-row;
+
+	// Inner rows
+	.row {
+		@include s2-inner-row;
+	}
+}
+
+// Define the grid columns. You can define an arbitrary number of grid sizes
+// in the $s2-grid-cols variable, where a "grid size" is simply the number of
+// columns that will fit in a row. For each grid size that is defined, Spartan
+// will loop through and make CSS classes. For instance, if $s2-grid-cols: (12,
+// 16), Spartan will generate columns sized 1/12 to 11/12 of the grid, and 1/16
+// and 15/16 of the grid. Notice that values such as 6/12 and 8/16 are
+// equivalent - Spartan will create these anyway (the idea is that you shouldn't
+// mix denominators in a row - use 6/12 sized columns in a 12-column grid and
+// conversely for a 16-column grid). Full-sized columns may be defined in HTML
+// as simply divs, as they will use all of the available horizontal space with
+// no special styling.
+@each $grid-width in $s2-grid-cols { // For every grid size 
+	@for $col-size from 1 through $grid-width - 1 { // For every column width except full-width
+		.c-#{$col-size}-#{$grid-width} {
+			@include s2-col($col-size, $grid-width);
+			
+			// Define pulled columns, if $s2-grid-enable-pull is set. Due to the
+			// nature of Spartan's column pulling, LOTS of styles must be
+			// generated for EVERY possible column size. This consumes a sh*t
+			// ton of bytes and shouldn't be used unless pulled columns really
+			// need to be used. Spartan is smart enough to omit certain
+			// combinations for certain columns - it wouldn't make sense to pull
+			// a 6/12 column more than 6 column widths, since that would pull it
+			// right out of the grid!
+			
+			// We define pulled columns here to hijack the loop for generating
+			// all the columns.
+			@if $s2-grid-enable-pull {
+				@for $pull-amount from 1 through $grid-width - $col-size {
+					&.pull-#{$pull-amount} {
+						@include s2-pull($pull-amount, $grid-width, $col-size);
+					}
+				}
+			}
+		}
+	}
+}
+
+// Define responsive columns. Responsive columns will "collapse" into a more traditional div-style layout (i.e. one column after another vertically) below a certain screen size.
+.rcol {
+	@include s2-responsive-column($s2-mobile-width - 1);
+}
+
+// Define pushed columns. Pushed columns aren't sensitive to the column width,
+// and so fewer styles are necessary compared to pulled columns. However,
+// Spartan doesn't check if a pushed column makes physical sense - it is
+// completely possible to define a 11/12 column pushed six units, which would
+// make it stick out the grid!
+@each $grid-width in $s2-grid-cols {
+	@for $push-amount from 1 through $grid-width - 1 {
+		.push-#{$push-amount}-#{$grid-width} {
+			@include s2-push($push-amount, $grid-width);
+		}
+	}
+}
+
+// Defined centered columns if $s2-grid-enable-center is set. Remember that a
+// centred column must be the only column in its row.
+@if $s2-grid-enable-center {
+	.centered {
+		@include s2-center;
+	}
+}
+
+// Grid tiles.
+// Loop from one to the number of columns and generate semantic classes.
+// Classes are of the form .s-x-y, where x is the column width and y is the
+// number of columns.
+
+// Define grid tiles. You can define an arbitrary amount of "tile grid sizes" in
+// $s2-grid-tiles, where a "tile grid size" is simply the number of tiles that
+// will fit in a grid. For each of those, Spartan will generate a tile class
+// corresponding to the number of tiles fitting in a grid. For instance, a four
+// .tile-4 elements will fit in a single row.
+@each $tile-count in $s2-grid-tiles {
+	.tile-#{$tile-count} {
+		@include s2-tile($tile-count);
+	}
+}
