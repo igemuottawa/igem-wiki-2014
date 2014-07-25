@@ -1066,11 +1066,11 @@ th {
 
 /* line 28, ../scss/uo2014.scss */
 html {
-  background-image: -webkit-gradient(radial, circle at 50% 83%, 0, circle at 50% 83%, 80, color-stop(0%, #75507b), color-stop(80%, #f8f8f8));
-  background-image: -webkit-radial-gradient(circle at 50% 83%, #75507b, #f8f8f8 80%);
-  background-image: -moz-radial-gradient(circle at 50% 83%, #75507b, #f8f8f8 80%);
-  background-image: -o-radial-gradient(circle at 50% 83%, #75507b, #f8f8f8 80%);
-  background-image: radial-gradient(circle at 50% 83%, #75507b, #f8f8f8 80%);
+  background-image: -webkit-gradient(radial, circle at 50% 85%, 0, circle at 50% 85%, 80, color-stop(0%, #75507b), color-stop(80%, #f8f8f8));
+  background-image: -webkit-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
+  background-image: -moz-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
+  background-image: -o-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
+  background-image: radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -1107,11 +1107,11 @@ p:last-child {
 .ig-main-header {
   overflow: hidden;
   *zoom: 1;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.04)), color-stop(50%, rgba(77, 154, 6, 0.12)), color-stop(100%, rgba(0, 0, 0, 0.04)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.04), rgba(77, 154, 6, 0.12), rgba(0, 0, 0, 0.04));
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.04), rgba(77, 154, 6, 0.12), rgba(0, 0, 0, 0.04));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.04), rgba(77, 154, 6, 0.12), rgba(0, 0, 0, 0.04));
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0.04), rgba(77, 154, 6, 0.12), rgba(0, 0, 0, 0.04));
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.02)), color-stop(50%, rgba(77, 154, 6, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.02)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
   border-bottom: 2px solid #4d9a06;
   height: 78px;
   margin-bottom: 20px;
