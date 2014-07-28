@@ -27,6 +27,7 @@ $white: #f8f8f8;
 
 html {
     @include background-image(radial-gradient(circle at 50% 85%, $purple2, #f8f8f8 80%));
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -35,6 +36,7 @@ html {
 body {
     font: 16px "Open Sans";
     margin: 0px;
+    position: relative;
 }
 
 h2 {
@@ -81,6 +83,28 @@ p {
     }
 }
 
+.ig-scroll-wrapper {
+    font-size: 0px;
+    margin: 0px 10%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ig-scroller {
+    @include clearfix;
+
+    font-size: 0px;
+    left: 0px;
+    position: relative;
+    width: 300%;
+
+    .ig-scroll-item {
+        float: left;
+        max-width: 100%;
+        width: 33.33%;
+    }
+}
+
 .ig-tile {
     cursor: pointer;
     font-size: 0px;
@@ -120,4 +144,15 @@ p {
 }
 .ig-narrow {
     @include s2-col(0.6, 1.6)
+}
+
+.ig-arrow {
+    cursor: pointer;
+    opacity: 0.7;
+    position: absolute;
+    top: 45%;
+    z-index: 3;
+
+    &.leftarrow { left: 12px; }
+    &.rightarrow { right: 12px; }
 }

@@ -286,7 +286,7 @@ th {
   margin-right: auto;
   max-width: 1148px;
   min-width: 0px;
-  padding: 0 15px;
+  padding: 0 0px;
   width: 100%;
 }
 /* line 69, ../scss/s2/_s2-grid.scss */
@@ -1071,39 +1071,41 @@ html {
   background-image: -moz-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
   background-image: -o-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
   background-image: radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
 }
 
-/* line 35, ../scss/uo2014.scss */
+/* line 36, ../scss/uo2014.scss */
 body {
   font: 16px "Open Sans";
   margin: 0px;
+  position: relative;
 }
 
-/* line 40, ../scss/uo2014.scss */
+/* line 42, ../scss/uo2014.scss */
 h2 {
   font: 32px Raleway;
   margin-bottom: 7px;
 }
 
-/* line 45, ../scss/uo2014.scss */
+/* line 47, ../scss/uo2014.scss */
 h3 {
   font: 24px Raleway;
   margin-bottom: 7px;
 }
 
-/* line 50, ../scss/uo2014.scss */
+/* line 52, ../scss/uo2014.scss */
 p {
   margin: 7px 0px;
 }
-/* line 53, ../scss/uo2014.scss */
+/* line 55, ../scss/uo2014.scss */
 p:last-child {
   margin-bottom: 0px;
 }
 
-/* line 58, ../scss/uo2014.scss */
+/* line 60, ../scss/uo2014.scss */
 .ig-main-header {
   overflow: hidden;
   *zoom: 1;
@@ -1117,40 +1119,64 @@ p:last-child {
   margin-bottom: 20px;
   padding: 15px 20px;
 }
-/* line 69, ../scss/uo2014.scss */
+/* line 71, ../scss/uo2014.scss */
 .ig-main-header .title {
   color: #444;
   font: 300 48px/48px "Open Sans";
   letter-spacing: -2px;
 }
-/* line 74, ../scss/uo2014.scss */
+/* line 76, ../scss/uo2014.scss */
 .ig-main-header .igem {
   color: #4d9a06;
   font-weight: 800;
   letter-spacing: -3px;
 }
-/* line 79, ../scss/uo2014.scss */
+/* line 81, ../scss/uo2014.scss */
 .ig-main-header .igem-logo {
   float: right;
 }
 
-/* line 84, ../scss/uo2014.scss */
+/* line 86, ../scss/uo2014.scss */
+.ig-scroll-wrapper {
+  font-size: 0px;
+  margin: 0px 10%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* line 93, ../scss/uo2014.scss */
+.ig-scroller {
+  overflow: hidden;
+  *zoom: 1;
+  font-size: 0px;
+  left: 0px;
+  position: relative;
+  width: 300%;
+}
+/* line 101, ../scss/uo2014.scss */
+.ig-scroller .ig-scroll-item {
+  float: left;
+  max-width: 100%;
+  width: 33.33%;
+}
+
+/* line 108, ../scss/uo2014.scss */
 .ig-tile {
   cursor: pointer;
   font-size: 0px;
   position: relative;
 }
-/* line 89, ../scss/uo2014.scss */
+/* line 113, ../scss/uo2014.scss */
 .ig-tile.empty:after {
   content: '';
   display: block;
   padding-top: 62.5%;
 }
-/* line 95, ../scss/uo2014.scss */
+/* line 119, ../scss/uo2014.scss */
 .ig-tile img {
   width: 100%;
 }
-/* line 99, ../scss/uo2014.scss */
+/* line 123, ../scss/uo2014.scss */
 .ig-tile .text {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(80%, rgba(0, 0, 0, 0.75)));
   background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.75) 80%);
@@ -1163,16 +1189,16 @@ p:last-child {
   position: absolute;
   width: 100%;
 }
-/* line 108, ../scss/uo2014.scss */
+/* line 132, ../scss/uo2014.scss */
 .ig-tile .text h2, .ig-tile .text h3, .ig-tile .text p {
   color: #f8f8f8;
 }
-/* line 112, ../scss/uo2014.scss */
+/* line 136, ../scss/uo2014.scss */
 .ig-tile .text p {
   font-size: 14px;
 }
 
-/* line 118, ../scss/uo2014.scss */
+/* line 142, ../scss/uo2014.scss */
 .ig-wide {
   float: left;
   margin-left: 1%;
@@ -1183,7 +1209,7 @@ p:last-child {
   margin-left: 0px;
 }
 
-/* line 121, ../scss/uo2014.scss */
+/* line 145, ../scss/uo2014.scss */
 .ig-narrow {
   float: left;
   margin-left: 1%;
@@ -1192,4 +1218,21 @@ p:last-child {
 /* line 80, ../scss/s2/_s2-grid.scss */
 .ig-narrow:first-child {
   margin-left: 0px;
+}
+
+/* line 149, ../scss/uo2014.scss */
+.ig-arrow {
+  cursor: pointer;
+  opacity: 0.7;
+  position: absolute;
+  top: 45%;
+  z-index: 3;
+}
+/* line 156, ../scss/uo2014.scss */
+.ig-arrow.leftarrow {
+  left: 12px;
+}
+/* line 157, ../scss/uo2014.scss */
+.ig-arrow.rightarrow {
+  right: 12px;
 }

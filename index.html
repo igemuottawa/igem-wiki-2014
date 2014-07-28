@@ -9,11 +9,48 @@
 
     <script>
     $(function() {
+        var currentTileset = 0;
+
         $(".hover").parents(".ig-tile").hover(function() {
             $(this).find(".hover").slideDown(300);
         }, function() {
             $(this).find(".hover").slideUp(300);
         });
+
+        $(".leftarrow").click(function(e) {
+            scrollTo(currentTileset - 1);
+        });
+        $(".rightarrow").click(function(e) {
+            scrollTo(currentTileset + 1);
+        });
+
+        $(window).resize(function() {
+            console.log("resize");
+            scrollTo(currentTileset, true);
+        });
+
+        function scrollTo(tileset, instant) {
+            if (!instant) instant = false;
+
+            if (tileset < 0 || tileset > 2) return;
+
+            // Scroll to the chosen tile
+            currentTileset = tileset;
+            var tileWidth = $(".ig-scroll-item").width();
+            var scrollTarget = -tileset * tileWidth;
+            var duration = instant ? 0 : 600;
+            $(".ig-scroller").animate({ left: scrollTarget }, duration);
+
+            // Hide the arrows
+            if (tileset == 0)
+                $(".leftarrow").fadeOut(300);
+            else
+                $(".leftarrow").fadeIn(300);
+            if (tileset == 2)
+                $(".rightarrow").fadeOut(300);
+            else
+                $(".rightarrow").fadeIn(300);
+        }
     });
     </script>
 </head>
@@ -25,48 +62,147 @@
         </div>
     </header>
 
-    <div class="row">
-        <div class="ig-wide">
-            <div class="row ig-tile">     
-                <img src="r/uo2014-tile1.jpg" alt="">
-                <div class="text">
-                    <h2>The tri-stable switch</h2>
-                    <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
-                    <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="ig-tile c-4-12 empty">
-                </div>
-                <div class="ig-tile c-4-12">
-                    <img src="r/uo2014-tile3.jpg" alt="">
-                    <div class="text">
-                        <p>Mathematical modelling of the tri-stable switch</p>
+    <img src="r/uo2014-arrow-left.png" alt="" class="ig-arrow leftarrow" hidden>
+    <img src="r/uo2014-arrow-right.png" alt="" class="ig-arrow rightarrow">
+
+    <div class="ig-scroll-wrapper">
+        <div class="ig-scroller">
+            <div class="row ig-scroll-item">
+                <div class="ig-wide">
+                    <div class="row ig-tile">     
+                        <img src="r/uo2014-tile1.jpg" alt="">
+                        <div class="text">
+                            <h2>The tri-stable switch</h2>
+                            <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
+                            <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="ig-tile c-4-12 empty">
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile3.jpg" alt="">
+                            <div class="text">
+                                <p>Mathematical modelling of the tri-stable switch</p>
+                            </div>
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile4.jpg" alt="">
+                            <div class="text">
+                                <h3>Applications</h3>
+                                <p class="hover" hidden>
+                                    Biotic, smart surfaces
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="ig-tile c-4-12">
-                    <img src="r/uo2014-tile4.jpg" alt="">
-                    <div class="text">
-                        <h3>Applications</h3>
-                        <p class="hover" hidden>
-                            Biotic, smart surfaces
-                        </p>
+                <div class="ig-narrow">
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile5.jpg" alt="">
+                            <div class="text">
+                                <h3>Methods</h3>
+                                <p>How we built the network</p>
+                            </div>
+                    </div>
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile6.jpg" alt="">
+                        <div class="text">
+                            <h3>Results</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="ig-narrow">
-            <div class="row ig-tile">
-                <img src="r/uo2014-tile5.jpg" alt="">
-                    <div class="text">
-                        <h3>Methods</h3>
-                        <p>How we built the network</p>
+            <div class="row ig-scroll-item">
+                <div class="ig-wide">
+                    <div class="row ig-tile">     
+                        <img src="r/uo2014-tile1.jpg" alt="">
+                        <div class="text">
+                            <h2>The tri-stable switch</h2>
+                            <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
+                            <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="ig-tile c-4-12 empty">
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile3.jpg" alt="">
+                            <div class="text">
+                                <p>Mathematical modelling of the tri-stable switch</p>
+                            </div>
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile4.jpg" alt="">
+                            <div class="text">
+                                <h3>Applications</h3>
+                                <p class="hover" hidden>
+                                    Biotic, smart surfaces
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ig-narrow">
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile5.jpg" alt="">
+                            <div class="text">
+                                <h3>Methods</h3>
+                                <p>How we built the network</p>
+                            </div>
+                    </div>
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile6.jpg" alt="">
+                        <div class="text">
+                            <h3>Results</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row ig-tile">
-                <img src="r/uo2014-tile6.jpg" alt="">
-                <div class="text">
-                    <h3>Results</h3>
+            <div class="row ig-scroll-item">
+                <div class="ig-wide">
+                    <div class="row ig-tile">     
+                        <img src="r/uo2014-tile1.jpg" alt="">
+                        <div class="text">
+                            <h2>The tri-stable switch</h2>
+                            <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
+                            <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="ig-tile c-4-12 empty">
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile3.jpg" alt="">
+                            <div class="text">
+                                <p>Mathematical modelling of the tri-stable switch</p>
+                            </div>
+                        </div>
+                        <div class="ig-tile c-4-12">
+                            <img src="r/uo2014-tile4.jpg" alt="">
+                            <div class="text">
+                                <h3>Applications</h3>
+                                <p class="hover" hidden>
+                                    Biotic, smart surfaces
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ig-narrow">
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile5.jpg" alt="">
+                            <div class="text">
+                                <h3>Methods</h3>
+                                <p>How we built the network</p>
+                            </div>
+                    </div>
+                    <div class="row ig-tile">
+                        <img src="r/uo2014-tile6.jpg" alt="">
+                        <div class="text">
+                            <h3>Results</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
