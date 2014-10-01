@@ -25,6 +25,10 @@ $red3:    #a40000;
 
 $white: #f8f8f8;
 
+// Golden ratio
+$G: 1.6;
+$g: 1 / $G;
+
 html {
     @include background-image(radial-gradient(circle at 50% 85%, $purple2, #f8f8f8 80%));
     background-attachment: fixed;
@@ -35,6 +39,7 @@ html {
 
 body {
     font: 16px "Open Sans";
+    height: 100%; // Stretch the height of the body
     margin: 0px;
     position: relative;
 }
@@ -63,6 +68,7 @@ p {
     $side-color: rgba(0, 0, 0, 0.02);
     $center-color: rgba(77, 154, 6, 0.10);
     @include background-image(linear-gradient(left, $side-color, $center-color, $side-color));
+    background: #fcfcfc; // Maybe?
     border-bottom: 2px solid $green3;
     height: 78px;
     margin-bottom: 20px;
@@ -85,52 +91,55 @@ p {
 
 .ig-scroll-wrapper {
     font-size: 0px;
-    margin: 0px 10%;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: hidden; // Keep the X scroll bar from appearing
 }
 
 .ig-scroller {
-    @include clearfix;
+    @include clearfix; // Extend the height to fit the content
 
     font-size: 0px;
     left: 0px;
     position: relative;
     width: 300%;
-
-    .ig-scroll-item {
-        float: left;
-        max-width: 100%;
-        width: 33.33%;
-    }
 }
 
-.ig-tile {
-    cursor: pointer;
-    font-size: 0px;
+.ig-tileset-outer {
+    float: left;
+    margin: 0px 3.33%;
+    max-width: 100%;
     position: relative;
+    width: 26.67%;
+}
 
-    &.empty:after {
-        content: '';
-        display: block;
-        padding-top: 62.5%;
-    }
+.ig-tileset-inner {
+    padding-top: 50%;
+    position: relative;
+}
+
+
+.ig-tile {
+    cursor: pointer; // Fake links
+    font-size: 0px; // Prevent text from misaligning the image and overlay
+    position: absolute;
 
     img {
-        width: 100%;
+        width: 100%; // All images are sized to the golden ratio
     }
 
     .text {
         @include background-image(linear-gradient(transparent, rgba(0, 0, 0, 0.75) 80%));
 
         bottom: 0px;
+        left: 0px;
         padding: 7px;
         padding-top: 18px;
         position: absolute;
-        width: 100%;
+        right: 0px;
 
         h2, h3, p {
             color: $white;
+            width: 100%;
         }
 
         p {
@@ -139,12 +148,23 @@ p {
     }
 }
 
-.ig-wide {
-    @include s2-col(1, 1.6)
-}
-.ig-narrow {
-    @include s2-col(0.6, 1.6)
-}
+// Tile positions
+// ========
+.wl-1 { left: 0%; top: 0%; width: 59%;}
+.wl-2 { left: 60%; top: 50%; width: 39%;}
+.wl-3 { left: 40%; top: 75%; width: 19%;}
+.wl-4 { left: 60%; top: 25%; width: 19%;}
+.wl-5 { left: 80%; top: 0%; width: 19%;}
+
+.dl-1 { left: 0%; top: 0%; width: 59%;}
+.dl-2 { left: 60%; top: 50%; width: 39%;}
+.dl-3 { left: 40%; top: 75%; width: 19%;}
+.dl-4 { left: 60%; top: 25%; width: 19%;}
+
+.hp-1 { left: 0%; top: 0%; width: 59%;}
+.hp-2 { left: 60%; top: 50%; width: 39%;}
+.hp-3 { left: 40%; top: 75%; width: 19%;}
+.hp-4 { left: 60%; top: 25%; width: 19%;}
 
 .ig-arrow {
     cursor: pointer;

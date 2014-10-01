@@ -20,7 +20,7 @@ $s2-grid-enable-push: true !default;
 // Number of grid sizes to generate. Grids of size n will fit n columns in a
 // row. You can mix and match sizes in a single grid, although that generally
 // isn't a good idea. Add more columns using lists: (7, 12, 16...).
-$s2-grid-cols: (8, 12) !default;
+$s2-grid-cols: (8, 12, 16) !default;
 
 // Space between columns. Units must match the row width (% or px).
 $s2-grid-gutter: 1% !default;
