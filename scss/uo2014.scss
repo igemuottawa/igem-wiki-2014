@@ -26,9 +26,12 @@ $red3:    #a40000;
 
 $white: #f8f8f8;
 
-// Golden ratio
-$G: 1.6;
-$g: 1 / $G;
+// Ratios
+// ------
+$K: 1.6; // Ratio of tile width to height. Should be the golden ratio.
+$k: 1 / $K;
+$kTileset: 0.5; // Ratio of tileset width to height
+$kTile: 1 / ($K * $kTileset); // Ratio of how much % width a tile occupies to its % height in the tileset.
 
 html {
     //@include background-image(radial-gradient(circle at 50% 85%, $purple2, #f8f8f8 80%));
@@ -130,7 +133,7 @@ p {
 }
 
 .ig-tileset-inner {
-    padding-top: 50%;
+    padding-top: percentage($kTileset);
     position: relative;
 }
 
@@ -142,7 +145,7 @@ p {
     overflow: hidden;
     position: absolute;
 
-    img {
+    img, video {
         width: 100%; // All images are sized to the golden ratio
     }
 
@@ -168,13 +171,22 @@ p {
 }
 
 // Tile positions
-// ========
-.wl-1 { left: 0%; top: 0%; width: 59%;}
-.wl-2 { left: 60%; top: 50%; width: 39%;}
-.wl-3 { left: 40%; top: 75%; width: 19%;}
-.wl-4 { left: 60%; top: 25%; width: 19%;}
-.wl-5 { left: 80%; top: 0%; width: 19%;}
-.wl-6 { left: 20%; top: 75%; width: 19%;}
+// ==============
+$margin: 0.75%;
+$halfmargin: $kTileset * $margin;
+@mixin tile($left, $top, $width) {
+    height: $kTile * $width - $margin;
+    left: $left;
+    top: $top;
+    width: $width - $halfmargin;
+}
+
+.wl-1 { @include tile(0%, 0%, 60%); }
+.wl-2 { @include tile(60%, 50%, 40%); }
+.wl-3 { @include tile(60%, 25%, 20%); }
+.wl-4 { @include tile(40%, 75%, 20%); }
+.wl-5 { @include tile(80%, 0%, 20%); }
+.wl-6 { @include tile(20%, 75%, 20%); }
 
 .dl-1 { left: 0%; top: 0%; width: 59%;}
 .dl-2 { left: 60%; top: 50%; width: 39%;}
