@@ -98,7 +98,7 @@
         function scrollTo(tileset, instant) {
             if (!instant) instant = false;
 
-            if (tileset < 0 || tileset > 2) return;
+            if (tileset < 0 || tileset > 3) return;
 
             // Scroll to the chosen tile
             currentTileset = tileset;
@@ -113,14 +113,22 @@
                 $(".leftarrow").fadeOut(300);
             else
                 $(".leftarrow").fadeIn(300);
-            if (tileset == 2)
+            if (tileset == 3)
                 $(".rightarrow").fadeOut(300);
             else
                 $(".rightarrow").fadeIn(300);
 
-            blendTo(blendStates[tileset]);
+            //blendTo(blendStates[tileset]);
         }
-        setTimeout(function(){scrollTo(currentTileset, true);}, 100);
+
+        setTimeout(function(){
+            $(".ig-tile").each(function() {
+                if (Math.random() < 0.5)
+                    $(this).fadeIn(700);
+                else
+                    $(this).slideDown(700);
+            });
+        }, 400);
     });
     </script>
 </head>
@@ -128,6 +136,10 @@
     <header class="ig-main-header">
         <div class="row">
             <span class="title igem">iGEM</span><span class="title">uOttawa</span>
+            <a href="project.html">project</a>
+            <a href="project.html">dry lab</a>
+            <a href="project.html">policy</a>
+            <a href="project.html">team</a>
             <img src="r/uo2014-igemlogo.png" alt="" class="igem-logo no-k">
         </div>
     </header>
@@ -141,18 +153,18 @@
             <!-- ====== WET LAB ====== -->
             <div class="ig-tileset-outer"><div class="ig-tileset-inner">
                 <div class="ig-tile wl-1">
-                    <img src="r/uo2014-tile1.jpg" alt="">
+                    <img src="r/uo2014-tile2.jpg" alt="">
                     <div class="text">
-                        <h2>The tri-stable switch</h2>
-                        <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
-                        <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
+                        <h2>Take the tour!</h2>
+                        <p>How we built the tri-stable switch in <em>S. cerevisae</em>.</p>
+                        <p class="hover" hidden>Let us take you through our creative and scientific process of building one of the most interesting proposed genetic networks &mdash; one that may shed light on how stem cells specialize and allow us to create similar behaviour in a lab.</p>
                     </div>
                 </div>
                 <div class="ig-tile wl-2">
-                    <img src="r/uo2014-tile2.jpg" alt="">
+                    <img src="r/uo2014-tile1.jpg" alt="">
                     <div class="text">
-                        <h2>The tri-stable switch</h2>
-                        <p>Modelling stem cell differentiation in <em>S. cerevisae</em>.</p>
+                        <h2>The project</h2>
+                        <p>Modelling stem cell differentiation using a tri-stable switch.</p>
                         <p class="hover" hidden>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus reprehenderit, minima consequuntur enim corporis quod quis unde iusto ratione consectetur! Quibusdam quas voluptas necessitatibus alias aspernatur quasi a maxime impedit.</p>
                     </div>
                 </div>
@@ -171,7 +183,14 @@
                 <div class="ig-tile wl-5">
                     <img src="r/uo2014-tile16.jpg" alt="">
                     <div class="text">
-                        <h3>Interlab Study</h3>
+                        <h3>Measurement</h3>
+                        <p>Interlab study</p>
+                    </div>
+                </div>
+                <div class="ig-tile wl-6">
+                    <img src="r/uo2014-tile15.jpg" alt="">
+                    <div class="text">
+                        <h3>Biobricks</h3>
                     </div>
                 </div>
             </div></div>
@@ -243,6 +262,36 @@
                     <img src="r/uo2014-tile12.jpg" alt="">
                     <div class="text">
                         <h3>Methods</h3>
+                    </div>
+                </div>
+            </div></div>
+
+            <!-- ====== Team ====== -->
+            <div class="ig-tileset-outer"><div class="ig-tileset-inner">
+                <div class="ig-tile te-1">
+                    <video src="r/uo2014-timelapse.mp4" width="100%" autoplay loop preload="auto" muted>
+                    </video>
+                    <div class="text">
+                        <h2>The hardest-working team in iGEM.</h2>
+                        <p><s>Working hard</s> Hardly working 24/7 since 2008.</p>
+                    </div>
+                </div>
+                <div class="ig-tile te-2">
+                    <img src="r/uo2014-tile10.jpg" alt="">
+                    <div class="text">
+                        <h3>Safety</h3>
+                    </div>
+                </div>
+                <div class="ig-tile te-3">
+                    <img src="r/uo2014-tile11.jpg" alt="">
+                    <div class="text">
+                        <h3>Notebook</h3>
+                    </div>
+                </div>
+                <div class="ig-tile te-4">
+                    <img src="r/uo2014-tile12.jpg" alt="">
+                    <div class="text">
+                        <h3>Attributions</h3>
                     </div>
                 </div>
             </div></div>

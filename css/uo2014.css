@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Raleway:300,400);
 /* line 1, ../scss/s2/include/_s2-normalize.scss */
 html {
   font-family: sans-serif;
@@ -1840,20 +1841,13 @@ th {
   margin-left: 0px;
 }
 
-/* line 32, ../scss/uo2014.scss */
+/* line 33, ../scss/uo2014.scss */
 html {
-  background-image: -webkit-gradient(radial, circle at 50% 85%, 0, circle at 50% 85%, 80, color-stop(0%, #75507b), color-stop(80%, #f8f8f8));
-  background-image: -webkit-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
-  background-image: -moz-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
-  background-image: -o-radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
-  background-image: radial-gradient(circle at 50% 85%, #75507b, #f8f8f8 80%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("../r/uo2014-gplay.png");
   height: 100%;
 }
 
-/* line 40, ../scss/uo2014.scss */
+/* line 42, ../scss/uo2014.scss */
 body {
   font: 16px "Open Sans";
   height: 100%;
@@ -1861,102 +1855,111 @@ body {
   position: relative;
 }
 
-/* line 47, ../scss/uo2014.scss */
+/* line 49, ../scss/uo2014.scss */
 h2 {
-  font: 32px Raleway;
+  font: 300 32px Raleway;
   margin-bottom: 7px;
 }
 
-/* line 52, ../scss/uo2014.scss */
+/* line 54, ../scss/uo2014.scss */
 h3 {
-  font: 24px Raleway;
+  font: 300 24px Raleway;
   margin-bottom: 7px;
 }
 
-/* line 57, ../scss/uo2014.scss */
+/* line 59, ../scss/uo2014.scss */
 p {
   margin: 7px 0px;
 }
-/* line 60, ../scss/uo2014.scss */
+/* line 62, ../scss/uo2014.scss */
 p:last-child {
   margin-bottom: 0px;
 }
 
-/* line 65, ../scss/uo2014.scss */
+/* line 67, ../scss/uo2014.scss */
 .ig-main-header {
   overflow: hidden;
   *zoom: 1;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.02)), color-stop(50%, rgba(77, 154, 6, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.02)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
   background: #fcfcfc;
   border-bottom: 2px solid #4d9a06;
   height: 78px;
   margin-bottom: 20px;
   padding: 15px 20px;
 }
-/* line 77, ../scss/uo2014.scss */
+/* line 80, ../scss/uo2014.scss */
 .ig-main-header .title {
   color: #444;
   font: 300 48px/48px "Open Sans";
   letter-spacing: -2px;
 }
-/* line 82, ../scss/uo2014.scss */
+/* line 85, ../scss/uo2014.scss */
 .ig-main-header .igem {
   color: #4d9a06;
   font-weight: 800;
   letter-spacing: -3px;
 }
-/* line 87, ../scss/uo2014.scss */
+/* line 90, ../scss/uo2014.scss */
 .ig-main-header .igem-logo {
   float: right;
 }
+/* line 96, ../scss/uo2014.scss */
+.ig-main-header a {
+  color: #666;
+  font: 300 0.9em Raleway;
+  margin-left: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 103, ../scss/uo2014.scss */
+.ig-main-header a:hover {
+  text-decoration: underline;
+}
 
-/* line 92, ../scss/uo2014.scss */
+/* line 109, ../scss/uo2014.scss */
 .ig-scroll-wrapper {
   font-size: 0px;
   position: relative;
   overflow-x: hidden;
 }
 
-/* line 98, ../scss/uo2014.scss */
+/* line 115, ../scss/uo2014.scss */
 .ig-scroller {
   overflow: hidden;
   *zoom: 1;
   font-size: 0px;
   left: 0px;
   position: relative;
-  width: 300%;
+  width: 400%;
 }
 
-/* line 107, ../scss/uo2014.scss */
+/* line 124, ../scss/uo2014.scss */
 .ig-tileset-outer {
   float: left;
   margin: 0px 3.33%;
   max-width: 100%;
   position: relative;
-  width: 26.67%;
+  width: 18.34%;
 }
 
-/* line 115, ../scss/uo2014.scss */
+/* line 132, ../scss/uo2014.scss */
 .ig-tileset-inner {
   padding-top: 50%;
   position: relative;
 }
 
-/* line 121, ../scss/uo2014.scss */
+/* line 138, ../scss/uo2014.scss */
 .ig-tile {
   cursor: pointer;
+  display: none;
   font-size: 0px;
+  overflow: hidden;
   position: absolute;
 }
-/* line 126, ../scss/uo2014.scss */
+/* line 145, ../scss/uo2014.scss */
 .ig-tile img {
   width: 100%;
 }
-/* line 130, ../scss/uo2014.scss */
+/* line 149, ../scss/uo2014.scss */
 .ig-tile .text {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(80%, rgba(0, 0, 0, 0.75)));
   background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.75) 80%);
@@ -1970,108 +1973,144 @@ p:last-child {
   position: absolute;
   right: 0px;
 }
-/* line 140, ../scss/uo2014.scss */
+/* line 159, ../scss/uo2014.scss */
 .ig-tile .text h2, .ig-tile .text h3, .ig-tile .text p {
   color: #f8f8f8;
   width: 100%;
 }
-/* line 145, ../scss/uo2014.scss */
+/* line 164, ../scss/uo2014.scss */
 .ig-tile .text p {
   font-size: 14px;
 }
 
-/* line 153, ../scss/uo2014.scss */
+/* line 172, ../scss/uo2014.scss */
 .wl-1 {
   left: 0%;
   top: 0%;
   width: 59%;
 }
 
-/* line 154, ../scss/uo2014.scss */
+/* line 173, ../scss/uo2014.scss */
 .wl-2 {
   left: 60%;
   top: 50%;
   width: 39%;
 }
 
-/* line 155, ../scss/uo2014.scss */
+/* line 174, ../scss/uo2014.scss */
 .wl-3 {
   left: 40%;
   top: 75%;
   width: 19%;
 }
 
-/* line 156, ../scss/uo2014.scss */
+/* line 175, ../scss/uo2014.scss */
 .wl-4 {
   left: 60%;
   top: 25%;
   width: 19%;
 }
 
-/* line 157, ../scss/uo2014.scss */
+/* line 176, ../scss/uo2014.scss */
 .wl-5 {
   left: 80%;
   top: 0%;
   width: 19%;
 }
 
-/* line 159, ../scss/uo2014.scss */
+/* line 177, ../scss/uo2014.scss */
+.wl-6 {
+  left: 20%;
+  top: 75%;
+  width: 19%;
+}
+
+/* line 179, ../scss/uo2014.scss */
 .dl-1 {
   left: 0%;
   top: 0%;
   width: 59%;
 }
 
-/* line 160, ../scss/uo2014.scss */
+/* line 180, ../scss/uo2014.scss */
 .dl-2 {
   left: 60%;
   top: 50%;
   width: 39%;
 }
 
-/* line 161, ../scss/uo2014.scss */
+/* line 181, ../scss/uo2014.scss */
 .dl-3 {
   left: 40%;
   top: 75%;
   width: 19%;
 }
 
-/* line 162, ../scss/uo2014.scss */
+/* line 182, ../scss/uo2014.scss */
 .dl-4 {
   left: 60%;
   top: 25%;
   width: 19%;
 }
 
-/* line 164, ../scss/uo2014.scss */
+/* line 184, ../scss/uo2014.scss */
 .hp-1 {
   left: 0%;
   top: 0%;
   width: 59%;
 }
 
-/* line 165, ../scss/uo2014.scss */
+/* line 185, ../scss/uo2014.scss */
 .hp-2 {
   left: 60%;
   top: 50%;
   width: 39%;
 }
 
-/* line 166, ../scss/uo2014.scss */
+/* line 186, ../scss/uo2014.scss */
 .hp-3 {
   left: 40%;
   top: 75%;
   width: 19%;
 }
 
-/* line 167, ../scss/uo2014.scss */
+/* line 187, ../scss/uo2014.scss */
 .hp-4 {
   left: 60%;
   top: 25%;
   width: 19%;
 }
 
-/* line 169, ../scss/uo2014.scss */
+/* line 189, ../scss/uo2014.scss */
+.te-1 {
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 74d%;
+}
+
+/* line 190, ../scss/uo2014.scss */
+.te-2 {
+  left: 20%;
+  top: 75%;
+  width: 19%;
+}
+
+/* line 191, ../scss/uo2014.scss */
+.te-3 {
+  left: 40%;
+  top: 75%;
+  width: 19%;
+}
+
+/* line 192, ../scss/uo2014.scss */
+.te-4 {
+  left: 60%;
+  top: 75%;
+  width: 19%;
+}
+
+/* line 194, ../scss/uo2014.scss */
 .ig-arrow {
   cursor: pointer;
   opacity: 0.7;
@@ -2079,11 +2118,11 @@ p:last-child {
   top: 45%;
   z-index: 3;
 }
-/* line 176, ../scss/uo2014.scss */
+/* line 201, ../scss/uo2014.scss */
 .ig-arrow.leftarrow {
   left: 12px;
 }
-/* line 177, ../scss/uo2014.scss */
+/* line 202, ../scss/uo2014.scss */
 .ig-arrow.rightarrow {
   right: 12px;
 }

@@ -1,4 +1,5 @@
 @import "s2/s2";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Raleway:300,400);
 
 // Tango colours
 $yellow1: #fce94f;
@@ -30,10 +31,11 @@ $G: 1.6;
 $g: 1 / $G;
 
 html {
-    @include background-image(radial-gradient(circle at 50% 85%, $purple2, #f8f8f8 80%));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    //@include background-image(radial-gradient(circle at 50% 85%, $purple2, #f8f8f8 80%));
+    background-image: url("../r/uo2014-gplay.png");
+    //background-attachment: fixed;
+    //background-repeat: no-repeat;
+    //background-size: cover;
     height: 100%;
 }
 
@@ -45,12 +47,12 @@ body {
 }
 
 h2 {
-    font: 32px Raleway;
+    font: 300 32px Raleway;
     margin-bottom: 7px;
 }
 
 h3 {
-    font: 24px Raleway;
+    font: 300 24px Raleway;
     margin-bottom: 7px;
 }
 
@@ -65,10 +67,11 @@ p {
 .ig-main-header {
     @include clearfix;
     
-    $side-color: rgba(0, 0, 0, 0.02);
-    $center-color: rgba(77, 154, 6, 0.10);
-    @include background-image(linear-gradient(left, $side-color, $center-color, $side-color));
-    background: #fcfcfc; // Maybe?
+    // $side-color: rgba(255, 255, 255, 0.2);
+    // $center-color: rgba(60, 100, 60, 0.40);
+    // @include background-image(linear-gradient(left, $side-color, $center-color, $side-color));
+    // @include background-image(radial-gradient(ellipse at 50% 100%, $center-color, $side-color 90%));
+    background: #fcfcfc;
     border-bottom: 2px solid $green3;
     height: 78px;
     margin-bottom: 20px;
@@ -87,6 +90,20 @@ p {
     .igem-logo {
         float: right;
     }
+
+    // Navigation
+    // ----------
+    a {
+        color: #666;
+        font: 300 0.9em Raleway;
+        margin-left: 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .ig-scroll-wrapper {
@@ -101,7 +118,7 @@ p {
     font-size: 0px;
     left: 0px;
     position: relative;
-    width: 300%;
+    width: 400%;
 }
 
 .ig-tileset-outer {
@@ -109,7 +126,7 @@ p {
     margin: 0px 3.33%;
     max-width: 100%;
     position: relative;
-    width: 26.67%;
+    width: 18.34%;
 }
 
 .ig-tileset-inner {
@@ -120,7 +137,9 @@ p {
 
 .ig-tile {
     cursor: pointer; // Fake links
+    display: none;
     font-size: 0px; // Prevent text from misaligning the image and overlay
+    overflow: hidden;
     position: absolute;
 
     img {
@@ -155,6 +174,7 @@ p {
 .wl-3 { left: 40%; top: 75%; width: 19%;}
 .wl-4 { left: 60%; top: 25%; width: 19%;}
 .wl-5 { left: 80%; top: 0%; width: 19%;}
+.wl-6 { left: 20%; top: 75%; width: 19%;}
 
 .dl-1 { left: 0%; top: 0%; width: 59%;}
 .dl-2 { left: 60%; top: 50%; width: 39%;}
@@ -165,6 +185,11 @@ p {
 .hp-2 { left: 60%; top: 50%; width: 39%;}
 .hp-3 { left: 40%; top: 75%; width: 19%;}
 .hp-4 { left: 60%; top: 25%; width: 19%;}
+
+.te-1 { left: 0%; top: 0%; width: 100%; height: 74d%;}
+.te-2 { left: 20%; top: 75%; width: 19%;}
+.te-3 { left: 40%; top: 75%; width: 19%;}
+.te-4 { left: 60%; top: 75%; width: 19%;}
 
 .ig-arrow {
     cursor: pointer;
