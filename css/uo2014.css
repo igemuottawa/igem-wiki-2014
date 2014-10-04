@@ -1843,7 +1843,7 @@ th {
 
 /* line 49, ../scss/_mixins.scss */
 .gplay {
-  background-image: url("../r/uo2014-gplay.png");
+  background-image: url("../r/uo2014-gplay.png") !important;
 }
 
 /* line 4, ../scss/uo2014.scss */
