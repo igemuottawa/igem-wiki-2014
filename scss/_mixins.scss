@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Raleway:300,400,600);
+
+// Tango colours
+// =============
+$yellow1: #fce94f;
+$yellow2: #edd400;
+$yellow3: #c4a000;
+$orange1: #fcaf3e;
+$orange2: #f57900;
+$orange3: #ce5c00;
+$brown1:  #e9b96e;
+$brown2:  #c17d11;
+$brown3:  #8f5902;
+$green1:  #8ae234;
+$green2:  #73d216;
+$green3:  #4d9a06;
+$blue1:   #729fcf;
+$blue2:   #3465a4;
+$blue3:   #204a87;
+$purple1: #ad7fa8;
+$purple2: #75507b;
+$purple3: #5c3566;
+$red1:    #ef2929;
+$red2:    #cc0000;
+$red3:    #a40000;
+$white:   #f6f6f6;
+
+// Ratios
+// ======
+$K: 1.6; // Ratio of tile width to height. Should be the golden ratio.
+$k: 1 / $K;
+$kTileset: 2; // Ratio of tileset width to height
+$kTile: $K / $kTileset; // Ratio of how much % width a vanilla tile occupies to its % height in the tileset.
+                        // E.g. A 60% wide tile may occupy 75% of the height with `$kTile = 0.8`.
+
+// Mixins
+// ======
+
+@mixin quiet-link {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Utility classes
+// ===============
+
+.gplay {
+    background-image: url("../r/uo2014-gplay.png");
+}
