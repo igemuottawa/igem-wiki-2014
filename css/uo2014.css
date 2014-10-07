@@ -1854,33 +1854,38 @@ body {
 }
 
 /* line 10, ../scss/uo2014.scss */
+body.scroll {
+  overflow-y: scroll;
+}
+
+/* line 14, ../scss/uo2014.scss */
 h1 {
   font: 300 36px Raleway;
   margin: 7px 0px;
 }
 
-/* line 15, ../scss/uo2014.scss */
+/* line 19, ../scss/uo2014.scss */
 h2 {
-  font: 300 32px Raleway;
-  margin-bottom: 7px;
-}
-
-/* line 20, ../scss/uo2014.scss */
-h3 {
   font: 300 24px Raleway;
   margin-bottom: 7px;
 }
 
-/* line 25, ../scss/uo2014.scss */
+/* line 24, ../scss/uo2014.scss */
+h3 {
+  font: 300 20px Raleway;
+  margin-bottom: 7px;
+}
+
+/* line 29, ../scss/uo2014.scss */
 p {
   margin: 7px 0px;
 }
-/* line 28, ../scss/uo2014.scss */
+/* line 32, ../scss/uo2014.scss */
 p:last-child {
   margin-bottom: 0px;
 }
 
-/* line 33, ../scss/uo2014.scss */
+/* line 37, ../scss/uo2014.scss */
 .ig-main-header {
   overflow: hidden;
   *zoom: 1;
@@ -1890,28 +1895,28 @@ p:last-child {
   margin-bottom: 20px;
   padding: 15px 0px;
 }
-/* line 42, ../scss/uo2014.scss */
+/* line 46, ../scss/uo2014.scss */
 .ig-main-header .title {
   color: #444;
   font: 300 48px/48px "Open Sans";
   letter-spacing: -2px;
   text-decoration: none;
 }
-/* line 48, ../scss/uo2014.scss */
+/* line 52, ../scss/uo2014.scss */
 .ig-main-header .igem {
   color: #4d9a06;
   font-weight: 800;
   letter-spacing: -3px;
 }
-/* line 53, ../scss/uo2014.scss */
+/* line 57, ../scss/uo2014.scss */
 .ig-main-header .igem-logo {
   float: right;
 }
-/* line 57, ../scss/uo2014.scss */
+/* line 61, ../scss/uo2014.scss */
 .ig-main-header nav {
   display: inline;
 }
-/* line 60, ../scss/uo2014.scss */
+/* line 64, ../scss/uo2014.scss */
 .ig-main-header nav a {
   color: #666;
   font: 300 14px Raleway;
@@ -1919,24 +1924,24 @@ p:last-child {
   text-decoration: none;
   text-transform: uppercase;
 }
-/* line 67, ../scss/uo2014.scss */
+/* line 71, ../scss/uo2014.scss */
 .ig-main-header nav a:hover {
   text-decoration: underline;
 }
-/* line 70, ../scss/uo2014.scss */
+/* line 74, ../scss/uo2014.scss */
 .ig-main-header nav a.current {
   border-bottom: 2px solid #75507b;
   text-decoration: none;
 }
 
-/* line 78, ../scss/uo2014.scss */
+/* line 82, ../scss/uo2014.scss */
 .ig-scroll-wrapper {
   font-size: 0px;
   position: relative;
   overflow-x: hidden;
 }
 
-/* line 84, ../scss/uo2014.scss */
+/* line 88, ../scss/uo2014.scss */
 .ig-scroller {
   overflow: hidden;
   *zoom: 1;
@@ -1946,7 +1951,7 @@ p:last-child {
   width: 400%;
 }
 
-/* line 93, ../scss/uo2014.scss */
+/* line 97, ../scss/uo2014.scss */
 .ig-tileset-outer {
   float: left;
   margin: 0px 3.33%;
@@ -1955,13 +1960,13 @@ p:last-child {
   width: 18.34%;
 }
 
-/* line 101, ../scss/uo2014.scss */
+/* line 105, ../scss/uo2014.scss */
 .ig-tileset-inner {
   padding-top: 50%;
   position: relative;
 }
 
-/* line 107, ../scss/uo2014.scss */
+/* line 111, ../scss/uo2014.scss */
 .ig-tile {
   cursor: pointer;
   display: none;
@@ -1969,11 +1974,11 @@ p:last-child {
   overflow: hidden;
   position: absolute;
 }
-/* line 114, ../scss/uo2014.scss */
+/* line 118, ../scss/uo2014.scss */
 .ig-tile img, .ig-tile video {
   width: 100%;
 }
-/* line 118, ../scss/uo2014.scss */
+/* line 122, ../scss/uo2014.scss */
 .ig-tile .text {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, transparent), color-stop(80%, rgba(0, 0, 0, 0.75)));
   background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.75) 80%);
@@ -1987,17 +1992,17 @@ p:last-child {
   position: absolute;
   right: 0px;
 }
-/* line 128, ../scss/uo2014.scss */
+/* line 132, ../scss/uo2014.scss */
 .ig-tile .text h2, .ig-tile .text h3, .ig-tile .text p {
   color: #f6f6f6;
   width: 100%;
 }
-/* line 133, ../scss/uo2014.scss */
+/* line 137, ../scss/uo2014.scss */
 .ig-tile .text p {
   font-size: 14px;
 }
 
-/* line 153, ../scss/uo2014.scss */
+/* line 157, ../scss/uo2014.scss */
 .wl-1 {
   height: 74.25%;
   left: 0%;
@@ -2005,7 +2010,7 @@ p:last-child {
   width: 59.625%;
 }
 
-/* line 154, ../scss/uo2014.scss */
+/* line 158, ../scss/uo2014.scss */
 .wl-2 {
   height: 49.25%;
   left: 60%;
@@ -2013,7 +2018,7 @@ p:last-child {
   width: 39.625%;
 }
 
-/* line 155, ../scss/uo2014.scss */
+/* line 159, ../scss/uo2014.scss */
 .wl-3 {
   height: 24.25%;
   left: 60%;
@@ -2021,7 +2026,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 156, ../scss/uo2014.scss */
+/* line 160, ../scss/uo2014.scss */
 .wl-4 {
   height: 24.25%;
   left: 40%;
@@ -2029,7 +2034,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 157, ../scss/uo2014.scss */
+/* line 161, ../scss/uo2014.scss */
 .wl-5 {
   height: 24.25%;
   left: 80%;
@@ -2037,7 +2042,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 158, ../scss/uo2014.scss */
+/* line 162, ../scss/uo2014.scss */
 .wl-6 {
   height: 24.25%;
   left: 20%;
@@ -2045,7 +2050,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 160, ../scss/uo2014.scss */
+/* line 164, ../scss/uo2014.scss */
 .dl-1 {
   height: 74.25%;
   left: 0%;
@@ -2053,7 +2058,7 @@ p:last-child {
   width: 59.625%;
 }
 
-/* line 161, ../scss/uo2014.scss */
+/* line 165, ../scss/uo2014.scss */
 .dl-2 {
   height: 49.25%;
   left: 60%;
@@ -2061,7 +2066,7 @@ p:last-child {
   width: 39.625%;
 }
 
-/* line 162, ../scss/uo2014.scss */
+/* line 166, ../scss/uo2014.scss */
 .dl-3 {
   height: 24.25%;
   left: 40%;
@@ -2069,7 +2074,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 163, ../scss/uo2014.scss */
+/* line 167, ../scss/uo2014.scss */
 .dl-4 {
   height: 24.25%;
   left: 60%;
@@ -2077,7 +2082,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 165, ../scss/uo2014.scss */
+/* line 169, ../scss/uo2014.scss */
 .hp-1 {
   height: 74.25%;
   left: 0%;
@@ -2085,7 +2090,7 @@ p:last-child {
   width: 59.625%;
 }
 
-/* line 166, ../scss/uo2014.scss */
+/* line 170, ../scss/uo2014.scss */
 .hp-2 {
   height: 24.25%;
   left: 60%;
@@ -2093,7 +2098,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 167, ../scss/uo2014.scss */
+/* line 171, ../scss/uo2014.scss */
 .hp-3 {
   height: 24.25%;
   left: 60%;
@@ -2101,7 +2106,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 168, ../scss/uo2014.scss */
+/* line 172, ../scss/uo2014.scss */
 .hp-4 {
   height: 24.25%;
   left: 60%;
@@ -2109,7 +2114,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 170, ../scss/uo2014.scss */
+/* line 174, ../scss/uo2014.scss */
 .te-1 {
   height: 74.25%;
   left: 0%;
@@ -2117,7 +2122,7 @@ p:last-child {
   width: 99.625%;
 }
 
-/* line 171, ../scss/uo2014.scss */
+/* line 175, ../scss/uo2014.scss */
 .te-2 {
   height: 24.25%;
   left: 20%;
@@ -2125,7 +2130,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 172, ../scss/uo2014.scss */
+/* line 176, ../scss/uo2014.scss */
 .te-3 {
   height: 24.25%;
   left: 40%;
@@ -2133,7 +2138,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 173, ../scss/uo2014.scss */
+/* line 177, ../scss/uo2014.scss */
 .te-4 {
   height: 24.25%;
   left: 60%;
@@ -2141,7 +2146,7 @@ p:last-child {
   width: 19.625%;
 }
 
-/* line 175, ../scss/uo2014.scss */
+/* line 179, ../scss/uo2014.scss */
 .ig-arrow {
   cursor: pointer;
   opacity: 0.7;
@@ -2149,16 +2154,16 @@ p:last-child {
   top: 45%;
   z-index: 3;
 }
-/* line 182, ../scss/uo2014.scss */
+/* line 186, ../scss/uo2014.scss */
 .ig-arrow.leftarrow {
   left: 12px;
 }
-/* line 183, ../scss/uo2014.scss */
+/* line 187, ../scss/uo2014.scss */
 .ig-arrow.rightarrow {
   right: 12px;
 }
 
-/* line 186, ../scss/uo2014.scss */
+/* line 190, ../scss/uo2014.scss */
 nav.sidebar {
   float: left;
   margin-left: 1%;
@@ -2170,7 +2175,7 @@ nav.sidebar {
 nav.sidebar:first-child {
   margin-left: 0px;
 }
-/* line 193, ../scss/uo2014.scss */
+/* line 197, ../scss/uo2014.scss */
 nav.sidebar h1 {
   border-bottom: 1px dotted #666;
   font: 18px Raleway;
@@ -2178,7 +2183,7 @@ nav.sidebar h1 {
   padding-bottom: 10px;
   text-align: right;
 }
-/* line 202, ../scss/uo2014.scss */
+/* line 206, ../scss/uo2014.scss */
 nav.sidebar a {
   text-decoration: none;
   color: #666;
@@ -2190,7 +2195,7 @@ nav.sidebar a {
 nav.sidebar a:hover {
   text-decoration: underline;
 }
-/* line 211, ../scss/uo2014.scss */
+/* line 215, ../scss/uo2014.scss */
 nav.sidebar p {
   color: #999;
   display: none;
@@ -2198,7 +2203,7 @@ nav.sidebar p {
   padding-left: 25%;
 }
 
-/* line 219, ../scss/uo2014.scss */
+/* line 223, ../scss/uo2014.scss */
 .content {
   float: left;
   margin-left: 1%;

@@ -7,18 +7,22 @@ body {
     position: relative;
 }
 
+body.scroll {
+    overflow-y: scroll;
+}
+
 h1 {
     font: 300 36px Raleway;
     margin: 7px 0px;
 }
 
 h2 {
-    font: 300 32px Raleway;
+    font: 300 24px Raleway;
     margin-bottom: 7px;
 }
 
 h3 {
-    font: 300 24px Raleway;
+    font: 300 20px Raleway;
     margin-bottom: 7px;
 }
 
