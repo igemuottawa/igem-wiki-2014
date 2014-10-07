@@ -5,7 +5,7 @@
     <title>uOttawa iGEM</title>
 
     <link rel="stylesheet" href="css/uo2014.css" />
-    <script src="./uo2014-jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="./uo2014-konami.js"></script>
 
     <script>
@@ -13,6 +13,15 @@
     // ===========
     var konami = new Konami(function() {
         $("img:not(.no-k)").attr("src", "r/uo2014-shihab.jpg");
+    });
+
+    // Tabs
+    // ====
+    $("a.tab").click(function(e) {
+        e.preventDefault();
+        var target = $(this);
+        $("div.tab").hide();
+        $(".tab-" + this.attr("href")).show();
     });
     </script>
 </head>
@@ -23,8 +32,8 @@
             <nav>
                 <a class="current" href="project.html">project</a>
                 <a href="drylab.html">dry lab</a>
-                <a href="project.html">policy</a>
-                <a href="project.html">team</a>
+                <a href="policy.html">policy</a>
+                <a href="team.html">team</a>
             </nav>
             <img src="r/uo2014-igemlogo.png" alt="" class="igem-logo no-k">
         </div>

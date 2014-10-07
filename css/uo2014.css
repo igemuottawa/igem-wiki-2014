@@ -1848,7 +1848,7 @@ th {
 
 /* line 4, ../scss/uo2014.scss */
 body {
-  font: 16px "Open Sans";
+  font: 15px "Open Sans";
   margin: 0px;
   position: relative;
 }
@@ -1914,7 +1914,7 @@ p:last-child {
 /* line 60, ../scss/uo2014.scss */
 .ig-main-header nav a {
   color: #666;
-  font: 300 0.9em Raleway;
+  font: 300 14px Raleway;
   margin-left: 10px;
   text-decoration: none;
   text-transform: uppercase;
@@ -2159,7 +2159,7 @@ p:last-child {
 }
 
 /* line 186, ../scss/uo2014.scss */
-.sidebar {
+nav.sidebar {
   float: left;
   margin-left: 1%;
   width: 24.249%;
@@ -2167,11 +2167,11 @@ p:last-child {
   text-align: right;
 }
 /* line 80, ../scss/s2/_s2-grid.scss */
-.sidebar:first-child {
+nav.sidebar:first-child {
   margin-left: 0px;
 }
 /* line 193, ../scss/uo2014.scss */
-.sidebar h1 {
+nav.sidebar h1 {
   border-bottom: 1px dotted #666;
   font: 18px Raleway;
   margin: 0px;
@@ -2179,25 +2179,26 @@ p:last-child {
   text-align: right;
 }
 /* line 202, ../scss/uo2014.scss */
-.sidebar a {
+nav.sidebar a {
   text-decoration: none;
   color: #666;
   display: block;
   font: 14px Raleway;
-  margin-top: 15px;
+  margin: 15px 0px;
 }
 /* line 41, ../scss/_mixins.scss */
-.sidebar a:hover {
+nav.sidebar a:hover {
   text-decoration: underline;
 }
 /* line 211, ../scss/uo2014.scss */
-.sidebar p {
-  color: #bbb;
+nav.sidebar p {
+  color: #999;
+  display: none;
   font: 12px "Open Sans";
   padding-left: 25%;
 }
 
-/* line 218, ../scss/uo2014.scss */
+/* line 219, ../scss/uo2014.scss */
 .content {
   float: left;
   margin-left: 1%;

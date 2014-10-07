@@ -5,7 +5,7 @@
     <title>uOttawa iGEM</title>
 
     <link rel="stylesheet" href="css/uo2014.css" />
-    <script src="./uo2014-jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="./uo2014-konami.js"></script>
 
     <script>
@@ -16,21 +16,8 @@
     });
 
     $(function() {
-        var blendFrames = 0;
-        var blendStates = [[117, 80, 123], [52, 101, 164], [77, 154, 6]];
-        var blendStep = [0, 0, 0];
-        var blendInterval = 0;
-        var currentBlend = blendStates[0];
         var currentTileset = 0;
         var duration = 500;
-
-        var gradientStyle = [
-            "background-image: -webkit-gradient(radial, circle at 50% 85%, 0, circle at 50% 85%, 80, color-stop(0%, COLOR), color-stop(80%, #f8f8f8));",
-            "background-image: -webkit-radial-gradient(circle at 50% 85%, COLOR, #f8f8f8 80%);",
-            "background-image: -moz-radial-gradient(circle at 50% 85%, COLOR, #f8f8f8 80%);",
-            "background-image: -o-radial-gradient(circle at 50% 85%, COLOR, #f8f8f8 80%);",
-            "background-image: radial-gradient(circle at 50% 85%, COLOR, #f8f8f8 80%);"
-        ].join(" ");
 
         $(".hover").parents(".ig-tile").hover(function() {
             $(this).find(".hover").slideDown(300);
@@ -48,52 +35,6 @@
         $(window).resize(function() {
             scrollTo(currentTileset, true);
         });
-
-        function blendTo(blendTarget) {
-            clearInterval(blendInterval);
-            var t = duration;
-            var fps = 20;
-            blendFrames = (t / 1000) * fps;
-
-            // Calculate blend steps
-            var diff = [
-                blendTarget[0] - currentBlend[0],
-                blendTarget[1] - currentBlend[1],
-                blendTarget[2] - currentBlend[2]
-            ];
-            blendStep = [
-                diff[0] / blendFrames,
-                diff[1] / blendFrames,
-                diff[2] / blendFrames
-            ];
-
-            // Iterative function
-            blendInterval = setInterval(function() {
-                currentBlend = [
-                    currentBlend[0] + blendStep[0],
-                    currentBlend[1] + blendStep[1],
-                    currentBlend[2] + blendStep[2]
-                ];
-
-                // Set the style
-                var color = ["rgb(",
-                    Math.round(currentBlend[0]),
-                    ",",
-                    Math.round(currentBlend[1]),
-                    ",",
-                    Math.round(currentBlend[2]),
-                    ")"
-                ].join("");
-                var style = gradientStyle.replace(/COLOR/g, color);
-                $("html").attr("style", style);
-
-
-                blendFrames--;
-                if (blendFrames <= 0) {
-                    clearInterval(blendInterval);
-                }
-            }, 1000 / fps);
-        }
 
         function scrollTo(tileset, instant) {
             if (!instant) instant = false;
@@ -117,8 +58,6 @@
                 $(".rightarrow").fadeOut(300);
             else
                 $(".rightarrow").fadeIn(300);
-
-            //blendTo(blendStates[tileset]);
         }
 
         setTimeout(function(){
@@ -139,8 +78,8 @@
             <nav>
                 <a href="project.html">project</a>
                 <a href="drylab.html">dry lab</a>
-                <a href="project.html">policy</a>
-                <a href="project.html">team</a>
+                <a href="policy.html">policy</a>
+                <a href="team.html">team</a>
             </nav>
             <img src="r/uo2014-igemlogo.png" alt="" class="igem-logo no-k">
         </div>
